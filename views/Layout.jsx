@@ -3,6 +3,7 @@
 /**
  * Module dependencies.
  */
+import Head from './Head';
 var React = require('react');
 
 /**
@@ -32,13 +33,7 @@ module.exports = React.createClass({
         );
         return (
             <html>
-                <head>
-                    <meta charSet='utf-8' />
-                    <title>{this.props.title}</title>
-                    <link rel='stylesheet'
-                          href={this.props.publicPath + '/css/style.css' + cachebust}
-                    />
-                </head>
+                <Head cachebust={cachebust} />
                 <body>
                     {this.props.children}
                     <div id='data-config' data-config={JSON.stringify(config)} />
