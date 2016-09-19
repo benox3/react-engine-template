@@ -17,9 +17,11 @@ var isProduction = process.env.NODE_ENV === 'production';
  * View engine setup.
  */
 var routesFilePath = path.join(__dirname, 'routes/Routes');
+var initStoreFilePath = path.join(__dirname, 'src/store/init');
 var engine = ReactEngine.server.create({
     routes: require(routesFilePath),
-    routesFilePath: routesFilePath
+    routesFilePath: routesFilePath,
+    reduxStoreInitiator: initStoreFilePath
 });
 app.engine('.jsx', engine);
 

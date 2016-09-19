@@ -48,11 +48,13 @@ require('../css/style.css');
      */
     function boot() {
         var client = require('react-engine/lib/client');
+        var initStore = require('../store/init');
         client.boot({
             routes: require('../../routes/Routes'),
             viewResolver: function(viewName) {
                 return require('../../views/' + viewName);
-            }
+            },
+            reduxStoreInitiator: initStore
         });
     }
 
